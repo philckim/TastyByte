@@ -1,5 +1,5 @@
 # ad410groupa
-AD410 Project Group A
+AD410 Project Group A (Alex Sutherland, Andy Wilson, Paul Briones, Phil Kim)
 
 'Backend' folder contains backend Express app. To run this server:
 1. open new terminal
