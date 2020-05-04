@@ -14,3 +14,11 @@ AD410 Project Group A (Alex Sutherland, Andy Wilson, Paul Briones, Phil Kim)
 3. npm install
 4. run the following command:
     npm start
+    
+===== STYLE GUIDE =====
+1. ES6 JavaScript (let, arrow functions)
+2. Constants are in all caps
+3. Components are capitalized
+4. Use camelCase whenever possible
+
+
