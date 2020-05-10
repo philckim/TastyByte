@@ -1,3 +1,4 @@
+
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -7,8 +8,8 @@ import CreateRecipe from './components/CreateRecipe';
 import AccountSettings from './components/AccountSettings';
 import CustomNavigation from './components/CustomNavigation';
 
-function App() {
   return (
+
     <Router>
       <div>
         <CustomNavigation />
@@ -17,7 +18,6 @@ function App() {
           <Route exact path ="/accountsettings" component={AccountSettings} />
       </div>
     </Router>
-  );
-}
 
-export default App;
+  );
+};
