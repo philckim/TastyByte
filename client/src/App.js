@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Home from "./components/Home";
+import formCreateAccount from "./components/FormCreateAccount";
+import formLogin from "./components/FormLogin";
 
-function App() {
+export default (_) => {
+  const [page, setPage] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {page === 0 ? <Home setPage={setPage} /> : null}
+      {page === 1 ? <formCreateAccount setPage={setPage} /> : null}
+      {page === 2 ? <formLogin /> : null}
     </div>
   );
-}
-
-export default App;
+};
