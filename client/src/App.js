@@ -8,16 +8,21 @@ import CreateRecipe from './components/CreateRecipe';
 import AccountSettings from './components/AccountSettings';
 import CustomNavigation from './components/CustomNavigation';
 
-  return (
+function App(){
+    return (
 
-    <Router>
-      <div>
-        <CustomNavigation />
-          <Route exact path ="/" component={Home} />
-          <Route path ="/createrecipe" component={CreateRecipe} />
-          <Route exact path ="/accountsettings" component={AccountSettings} />
-      </div>
-    </Router>
 
-  );
+      <Router>
+        <div>
+          <CustomNavigation />
+            <Route exact path ="/" component={Home} />
+            <Route path ="/createrecipe" component={CreateRecipe} />
+            <Route exact path ="/accountsettings" component={AccountSettings} />
+        </div>
+      </Router>
+
+    );
+
 };
+  
+export default App;

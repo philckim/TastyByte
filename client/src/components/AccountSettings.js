@@ -8,6 +8,8 @@ class AccountSettings extends Component {
                 <Jumbotron>
                     <h2>Change Account Settings Here!</h2>
                     <p>Currently Under Construction!</p>
+
+
                 </Jumbotron>
             </Container>   
         )
