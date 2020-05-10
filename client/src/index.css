@@ -23,6 +23,10 @@ h1 {
   color: red;
 }
 
+.checkboxes { 
+  display:inline;
+}
+
 .welcome-title {
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
