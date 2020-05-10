@@ -1,16 +1,23 @@
-import React, { useState } from "react";
-import Home from "./components/Home";
-import formCreateAccount from "./components/FormCreateAccount";
-import formLogin from "./components/FormLogin";
 
-export default (_) => {
-  const [page, setPage] = useState(0);
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
+import {BrowserRouter as Router, Route } from 'react-router-dom';
+import Home from './components/Home';
+import CreateRecipe from './components/CreateRecipe';
+import AccountSettings from './components/AccountSettings';
+import CustomNavigation from './components/CustomNavigation';
 
   return (
-    <div>
-      {page === 0 ? <Home setPage={setPage} /> : null}
-      {page === 1 ? <formCreateAccount setPage={setPage} /> : null}
-      {page === 2 ? <formLogin /> : null}
-    </div>
+
+    <Router>
+      <div>
+        <CustomNavigation />
+          <Route exact path ="/" component={Home} />
+          <Route path ="/createrecipe" component={CreateRecipe} />
+          <Route exact path ="/accountsettings" component={AccountSettings} />
+      </div>
+    </Router>
+
   );
 };
