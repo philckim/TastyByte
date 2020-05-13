@@ -41,3 +41,8 @@ code {
 p {
   text-align: center;
 }
+
+.jumbotron {
+  margin-top: 20px;
+  border-style: solid;
+}

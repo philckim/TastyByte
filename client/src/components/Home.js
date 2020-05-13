@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Jumbotron>
+        <Jumbotron Classname="jumbotron1">
           <p>Currently Under Construction!</p>
           <h1 className="home-title">Welcome to TastyByte!</h1>
           <div className="create-act-btn">
