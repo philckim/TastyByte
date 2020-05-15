@@ -24,7 +24,9 @@ class FormLogin extends Component {
             <Button variant="primary" type="submit">
               Submit
             </Button>
-            <p>Forgot email or password?</p>
+            <p>
+              Forgot password? <a href="/recoverpassword">click here</a>
+            </p>
           </Form>
         </Jumbotron>
       </Container>
