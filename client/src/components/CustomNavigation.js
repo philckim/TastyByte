@@ -14,7 +14,8 @@ class CustomNavigation extends Component {
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
-                        <Nav.Link href="/accountsettings">Account Settings</Nav.Link>    
+                        <Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>  
+                        <Nav.Link href="/accountsettings">Account Settings</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>   
