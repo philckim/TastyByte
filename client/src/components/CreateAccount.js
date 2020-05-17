@@ -1,60 +1,52 @@
-import React, { Component } from "react";
-import { Jumbotron, Container, Form, Button } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Jumbotron, Container, Form, Button, Col } from 'react-bootstrap';
 
 class FormCreateAccount extends Component {
-  render() {
-    return (
-      <Container>
-        <Jumbotron>
-          <p>Currently Under Construction!</p>
-          <h2>Create your Tasty Byte Account</h2>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="name" placeholder="Enter a recipe name" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
+	render() {
+		return (
+			<Container>
+				<Jumbotron>
+					<h2>Create your Tasty Byte Account</h2>
+					<br />
+					<br />
 
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            {["checkbox"].map((type) => (
-              <div key={`inline-${type}`} className="mb-3">
-                <Form.Check
-                  inline
-                  label="1"
-                  type={type}
-                  id={`inline-${type}-1`}
-                />
-                <Form.Check
-                  inline
-                  label="2"
-                  type={type}
-                  id={`inline-${type}-2`}
-                />
-                <Form.Check
-                  inline
-                  disabled
-                  label="3 (disabled)"
-                  type={type}
-                  id={`inline-${type}-3`}
-                />
-              </div>
-            ))}
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Jumbotron>
-      </Container>
-    );
-  }
+					<Form>
+						<Form.Row>
+							<Form.Group as={Col} controlId="formGridEmail">
+								<Form.Label>Username</Form.Label>
+								<Form.Control type="user" placeholder="Enter username" />
+							</Form.Group>
+
+							<Form.Group as={Col} controlId="formGridEmail">
+								<Form.Label>Email</Form.Label>
+								<Form.Control type="email" placeholder="Enter email" />
+							</Form.Group>
+						</Form.Row>
+
+						<Form.Row>
+							<Form.Group as={Col} controlId="formGridPassword">
+								<Form.Label>Password</Form.Label>
+								<Form.Control type="password" placeholder="Enter password" />
+							</Form.Group>
+
+							<Form.Group as={Col} controlId="formGridPassword">
+								<Form.Label>Verify Password</Form.Label>
+								<Form.Control type="password" placeholder="Verify Password" />
+							</Form.Group>
+						</Form.Row>
+
+						<Form.Group id="formGridCheckbox">
+							<Form.Check type="checkbox" label="I agree to terms and conditions." />
+						</Form.Group>
+
+						<Button variant="primary" type="submit">
+							Submit
+						</Button>
+					</Form>
+				</Jumbotron>
+			</Container>
+		);
+	}
 }
 
 export default FormCreateAccount;
