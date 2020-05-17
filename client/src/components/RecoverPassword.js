@@ -9,7 +9,7 @@ class RecoverPassword extends Component {
           <p>Currently Under Construction!</p>
           <h2>Forgot Password?</h2>
           <p>You can reset your password here.</p>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group controlId="formBasicEmail" className="emailinputrecovery">
             <Form.Control type="email" placeholder="Enter email" />
           </Form.Group>
           <Button variant="primary" type="send" className="recoverpwsendbtn">
