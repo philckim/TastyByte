@@ -8,6 +8,7 @@ import AccountSettings from "./components/AccountSettings";
 import CustomNavigation from "./components/CustomNavigation";
 import FormLogin from "./components/FormLogin";
 import FormCreateAccount from "./components/CreateAccount";
+import RecoverPassword from "./components/RecoverPassword";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/accountsettings" component={AccountSettings} />
         <Route path="/formlogin" component={FormLogin} />
         <Route path="/createaccount" component={FormCreateAccount} />
+        <Route path="/recoverpassword" component={RecoverPassword} />
       </div>
     </Router>
   );

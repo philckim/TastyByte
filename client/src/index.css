@@ -46,3 +46,11 @@ p {
   margin-top: 20px;
   border-style: solid;
 }
+
+h2 {
+  text-align: center;
+}
+
+.emailinputrecovery {
+  margin-top: 75px;
+}
