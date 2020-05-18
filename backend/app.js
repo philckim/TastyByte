@@ -91,4 +91,14 @@ app.post('/api/createaccount', (req, res) => {
 	});
 });
 
+app.delete('api/account/:id', (req, res) => {
+	console.log(req.params.id);
+	let query = { _id: objectID(req.params.id) };
+	console.log(query);
+	Account.deleteOne(query, function(err, result) {
+		assert.equal(null, err);
+		console.log('Account deleted');
+	}).catch((err) => next(err));
+});
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
