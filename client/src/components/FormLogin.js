@@ -26,7 +26,7 @@ class FormLogin extends Component {
             </Button>
             <p>
               Forgot <a href="/recoverpassword">password</a> or{" "}
-              <a href="/recoverusername">username</a>
+              <a href="/recoverusername">username</a>?
             </p>
           </Form>
         </Jumbotron>
