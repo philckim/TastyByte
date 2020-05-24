@@ -101,6 +101,7 @@ app.post('/api/createaccount', (req, res) => {
 	});
 });
 
+// user's own account data
 app.get('/api/account/', (req, res) => {
 	let query = req.params.query;
 	Account.find({ request: query }, function(err, result) {
@@ -115,6 +116,7 @@ app.get('/api/account/', (req, res) => {
 	});
 });
 
+// viewing other user's data
 app.get('api/account/:id', (req, res) => {
 	console.log(req.params.id);
 	let query = { _id: objectID(req.params.id) };
