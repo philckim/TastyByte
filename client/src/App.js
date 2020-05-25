@@ -10,6 +10,7 @@ import FormLogin from './components/FormLogin';
 import FormCreateAccount from './components/CreateAccount';
 import RecoverPassword from './components/RecoverPassword';
 import ManageRecipes from './components/ManageRecipes';
+import Feed from './components/Feed';
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 				<Route path="/createaccount" component={FormCreateAccount} />
 				<Route path="/recoverpassword" component={RecoverPassword} />
 				<Route path="/managerecipes" component={ManageRecipes} />
+				<Route path="/feed" component={Feed} />
 			</div>
 		</Router>
 	);
