@@ -9,21 +9,25 @@ import CustomNavigation from "./components/CustomNavigation";
 import FormLogin from "./components/FormLogin";
 import FormCreateAccount from "./components/CreateAccount";
 import RecoverPassword from "./components/RecoverPassword";
-import ManageRecipes from "./components/ManageRecipes";
 import RecoverUsername from "./components/RecoverUsername";
+import ManageRecipes from "./components/ManageRecipes";
+import Feed from "./components/Feed";
 
 function App() {
   return (
     <Router>
-      <CustomNavigation />
-      <Route exact path="/" component={Home} />
-      <Route path="/createrecipe" component={CreateRecipe} />
-      <Route exact path="/accountsettings" component={AccountSettings} />
-      <Route path="/formlogin" component={FormLogin} />
-      <Route path="/createaccount" component={FormCreateAccount} />
-      <Route path="/recoverpassword" component={RecoverPassword} />
-      <Route path="/recoverusername" component={RecoverUsername} />
-      <Route path="/managerecipes" component={ManageRecipes} />
+      <div>
+        <CustomNavigation />
+        <Route exact path="/" component={Home} />
+        <Route path="/createrecipe" component={CreateRecipe} />
+        <Route exact path="/accountsettings" component={AccountSettings} />
+        <Route path="/formlogin" component={FormLogin} />
+        <Route path="/createaccount" component={FormCreateAccount} />
+        <Route path="/recoverpassword" component={RecoverPassword} />
+        <Route path="/recoverusername" component={RecoverUsername} />
+        <Route path="/managerecipes" component={ManageRecipes} />
+        <Route path="/feed" component={Feed} />
+      </div>
     </Router>
   );
 }
