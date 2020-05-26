@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Container, ListGroup, Button, Form, Col } from 'react-bootstrap';
+import { Jumbotron, Container, ListGroup } from 'react-bootstrap';
 
 class ManageRecipes extends Component {
 	render() {

@@ -1,7 +1,6 @@
 // Visual display of individual recipe posts
 
-import React, { Component, useState, useEffect } from 'react';
-import { Jumbotron, Container, ListGroup, Button, Form, Col } from 'react-bootstrap';
+import React from 'react';
 import './feed.css';
 
 const RecipeCard = (props) => {

@@ -1,12 +1,10 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Jumbotron, Container, ListGroup, Button, Form, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Jumbotron, Container } from 'react-bootstrap';
 import RecipeCard from './ViewRecipe';
 
 import './feed.css';
 
 const Feed = () => {
-	//const [recipes, setRecipes] = useState([]);
-
 	const [ recipes, setRecipes ] = useState([
 		{
 			picture: 'https://i.imgur.com/uGXcfnT.jpg',
@@ -61,6 +59,24 @@ const Feed = () => {
 					/>
 				))}
 			</Jumbotron>
+
+			{console.log(recipes)}
+
+			<div className="button">
+				<button
+					onClick={() =>
+						addNewRecipeHandler({
+							picture: 'https://i.imgur.com/EThjIeG.png',
+							name: 'Lorem Ipsum',
+							description: 'Lorem ipsum dolor sit amet',
+							ingredients: 'Lorem ipsum dolor sit amet',
+							instructions: 'Lorem ipsum dolor sit amet',
+							tags: 'Lorem ipsum dolor sit amet'
+						})}
+				>
+					Add Recipe
+				</button>
+			</div>
 		</Container>
 	);
 };
