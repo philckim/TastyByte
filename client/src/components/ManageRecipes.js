@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Container, ListGroup, Button, Form, Col } from 'react-bootstrap';
+import { Jumbotron, Container, ListGroup, Button, Form, Col, ButtonGroup } from 'react-bootstrap';
 
 class ManageRecipes extends Component {
 	render() {
@@ -10,10 +10,30 @@ class ManageRecipes extends Component {
 					<br />
 					<br />
 					<ListGroup variant="flush">
-						<ListGroup.Item>Cras justo odio</ListGroup.Item>
-						<ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-						<ListGroup.Item>Morbi leo risus</ListGroup.Item>
-						<ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+						<ListGroup.Item>
+							Mushroom Risotto
+							<ButtonGroup className="float-right">
+								<Button variant="info">Edit</Button> <Button variant="danger">Delete</Button>{' '}
+							</ButtonGroup>
+						</ListGroup.Item>
+						<ListGroup.Item>
+							Chicken Pot Pie
+							<ButtonGroup className="float-right">
+								<Button variant="info">Edit</Button> <Button variant="danger">Delete</Button>{' '}
+							</ButtonGroup>
+						</ListGroup.Item>
+						<ListGroup.Item>
+							Pan Pizza
+							<ButtonGroup className="float-right">
+								<Button variant="info">Edit</Button> <Button variant="danger">Delete</Button>{' '}
+							</ButtonGroup>
+						</ListGroup.Item>
+						<ListGroup.Item>
+							Al Pastor
+							<ButtonGroup className="float-right">
+								<Button variant="info">Edit</Button> <Button variant="danger">Delete</Button>{' '}
+							</ButtonGroup>
+						</ListGroup.Item>
 					</ListGroup>
 				</Jumbotron>
 			</Container>
