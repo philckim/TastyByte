@@ -1,27 +1,27 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const config = require('config');
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const config = require("config");
 
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require("express-validator");
 
 //Bring in account model
-const Account = require('../../models/Account');
+const Account = require("../../models/Account");
 
 // @route   POST api/account
 // @desc    Creates new account
 // @access  Public
 router.post(
-  '/',
+  "/",
   [
     //checking account fields
-    check('name', 'Name is required').not().isEmpty(),
-    check('email', 'Please include a valid email').isEmail(),
+    check("name", "Name is required").not().isEmpty(),
+    check("email", "Please include a valid email").isEmail(),
     check(
-      'password',
-      'Please enter a password with 6 or more characters'
-    ).isLength({ min: 6 })
+      "password",
+      "Please enter a password with 6 or more characters"
+    ).isLength({ min: 6 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -39,14 +39,14 @@ router.post(
       if (account) {
         return res
           .status(400)
-          .json({ errors: [{ msg: 'Account already exists' }] });
+          .json({ errors: [{ msg: "Account already exists" }] });
       }
 
       //add checked fields to Account schema
       account = new Account({
         name,
         email,
-        password
+        password,
       });
 
       // Hash the password
@@ -59,13 +59,13 @@ router.post(
       //Create payload for JWT
       const payload = {
         account: {
-          id: account.id
-        }
+          id: account.id,
+        },
       };
 
       jwt.sign(
         payload,
-        config.get('jwtSecret'),
+        config.get("jwtSecret"),
         { expiresIn: 360000 },
         (err, token) => {
           if (err) throw err;
@@ -74,7 +74,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server Error');
+      res.status(500).send("Server Error");
     }
   }
 );
@@ -82,7 +82,7 @@ router.post(
 // @route   GET api/posts
 // @desc    Test route
 // @access  Public
-router.get('/', (req, res) => res.send('Account route'));
+router.get("/", (req, res) => res.send("Account route"));
 
 // @route   GET api/account id
 // @desc    get information from individual account id
