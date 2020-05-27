@@ -54,3 +54,12 @@ h2 {
 .emailinputrecovery {
   margin-top: 75px;
 }
+
+.form-label {
+  /*color: blue;*/
+  font-weight: bold;
+}
+
+.form-file-label {
+  font-weight: bold;
+}

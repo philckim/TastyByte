@@ -9,9 +9,9 @@ class FormLogin extends Component {
           <h1 className="home-title">Welcome to TastyByte!</h1>
           <h2>Login</h2>
           <Form>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+            <Form.Group controlId="formBasicusername">
+              <Form.Label>User name</Form.Label>
+              <Form.Control type="user" placeholder="Enter Username" />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
@@ -25,7 +25,8 @@ class FormLogin extends Component {
               Submit
             </Button>
             <p>
-              Forgot password? <a href="/recoverpassword">click here</a>
+              Forgot <a href="/recoverpassword">password</a> or{" "}
+              <a href="/recoverusername">username</a>?
             </p>
           </Form>
         </Jumbotron>
