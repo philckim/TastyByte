@@ -74,7 +74,7 @@ h2 {
 	margin: 1rem 0;
 	opacity: 0.9;
 	background: var(--light-color);
-	color: #333;
+	color: #fff;
 }
 
 .alert-primary {
@@ -88,7 +88,7 @@ h2 {
 
 .alert-dark {
 	background: var(--dark-color);
-	color: rgb(15, 1, 1);
+	color: #fff;
 }
 
 .alert-danger {
