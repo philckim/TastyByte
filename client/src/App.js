@@ -12,15 +12,21 @@ import RecoverPassword from './components/RecoverPassword';
 import RecoverUsername from './components/RecoverUsername';
 import ManageRecipes from './components/ManageRecipes';
 import Feed from './components/Feed';
+import Alert from './components/Alert';
 
-function App() {
-	return (
+//redux
+import { Provider } from 'react-redux';
+import store from './store';
+
+const App = () => (
+	<Provider store={store}>
 		<Router>
 			<div>
 				<CustomNavigation />
 				<Route exact path="/" component={Home} />
 				<Route path="/createrecipe" component={CreateRecipe} />
 				<Route exact path="/accountsettings" component={AccountSettings} />
+				<Alert />
 				<Route path="/formlogin" component={FormLogin} />
 				<Route path="/createaccount" component={CreateAccount} />
 				<Route path="/recoverpassword" component={RecoverPassword} />
@@ -29,7 +35,7 @@ function App() {
 				<Route path="/feed" component={Feed} />
 			</div>
 		</Router>
-	);
-}
+	</Provider>
+);
 
 export default App;

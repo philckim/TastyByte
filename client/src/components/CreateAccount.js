@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Jumbotron, Container, Form, Button, Col } from 'react-bootstrap';
+import { setAlert } from '../actions/alert';
+import PropTypes from 'prop-types';
 
-const CreateAccount = () => {
+const CreateAccount = ({ setAlert }) => {
 	const [ formData, setFormData ] = useState({
 		firstname: '',
 		lastname: '',
@@ -18,7 +21,7 @@ const CreateAccount = () => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
 		if (password !== password2) {
-			console.log('Passwords do not match');
+			setAlert('Passwords do not match', 'danger');
 		} else {
 			console.log('Success');
 		}
@@ -26,12 +29,12 @@ const CreateAccount = () => {
 
 	return (
 		<Container>
-			<Jumbotron onSubmit={(e) => onSubmit(e)}>
+			<Jumbotron>
 				<h2>Create your Tasty Byte Account</h2>
 				<br />
 				<br />
 
-				<Form>
+				<Form onSubmit={(e) => onSubmit(e)}>
 					<Form.Row>
 						<Form.Group as={Col}>
 							<Form.Label>First Name</Form.Label>
@@ -133,4 +136,8 @@ const CreateAccount = () => {
 	);
 };
 
-export default CreateAccount;
+CreateAccount.propTypes = {
+	setAlert: PropTypes.func.isRequired
+};
+
+export default connect(null, { setAlert })(CreateAccount);

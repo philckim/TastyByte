@@ -1,65 +1,102 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+		"Droid Sans", "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .homediv {
-  align-content: center;
-  margin-top: 100px;
+	align-content: center;
+	margin-top: 100px;
 }
 
 .checkboxes {
-  display: inline;
+	display: inline;
 }
 
 .home-title {
-  text-align: center;
-  font-size: 70px;
-  color: red;
-  font-style: italic;
-  margin-bottom: 50px;
+	text-align: center;
+	font-size: 70px;
+	color: red;
+	font-style: italic;
+	margin-bottom: 50px;
 }
 
 .create-act-btn {
-  text-align: center;
-  margin-bottom: 20px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .login-btn {
-  text-align: center;
+	text-align: center;
 }
 
 p {
-  text-align: center;
+	text-align: center;
 }
 
 .jumbotron {
-  margin-top: 20px;
-  border-style: solid;
+	margin-top: 20px;
+	border-style: solid;
 }
 
 h2 {
-  text-align: center;
+	text-align: center;
 }
 
 .emailinputrecovery {
-  margin-top: 75px;
+	margin-top: 75px;
 }
 
 .form-label {
-  /*color: blue;*/
-  font-weight: bold;
+	/*color: blue;*/
+	font-weight: bold;
 }
 
 .form-file-label {
-  font-weight: bold;
+	font-weight: bold;
+}
+
+.tbLogo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.alert {
+	padding: 0.8rem;
+	margin: 1rem 0;
+	opacity: 0.9;
+	background: var(--light-color);
+	color: #333;
+}
+
+.alert-primary {
+	background: var(--primary-color);
+	color: #fff;
+}
+
+.alert-light {
+	background: var(--light-color);
+}
+
+.alert-dark {
+	background: var(--dark-color);
+	color: rgb(15, 1, 1);
+}
+
+.alert-danger {
+	background: var(--danger-color);
+	color: rgb(17, 14, 14);
+}
+
+.alert-success {
+	background: var(--success-color);
+	color: rgb(3, 3, 3);
 }
