@@ -8,50 +8,54 @@ const Recipe = require('../../models/Recipe');
 // @desc    Creates new recipe
 // @access  Public
 router.post(
-  '/',
-  [
-    //checking recipe fields
-    check('name', 'Name is required').not().isEmpty(),
-    check('author', 'Author is required').not().isEmpty(),
-    check('description', 'Description is required').not().isEmpty(),
-    check('instructions', 'Instructions are required').not().isEmpty(),
-    check('ingredients', 'Ingredients are required').not().isEmpty(),
-    check('photo', 'Photo is required').not().isEmpty(),
-    check('tags', 'tags are required').not().isEmpty()
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+	'/',
+	[
+		//checking recipe fields
+		check('name', 'Name is required').not().isEmpty(),
+		check('author', 'Author is required').not().isEmpty(),
+		check('description', 'Description is required').not().isEmpty(),
+		check('instructions', 'Instructions are required').not().isEmpty(),
+		check('ingredients', 'Ingredients are required').not().isEmpty(),
+		check('photo', 'Photo is required').not().isEmpty(),
+		check('tags', 'tags are required').not().isEmpty()
+	],
+	async (req, res) => {
+		const errors = validationResult(req);
+		if (!errors.isEmpty()) {
+			return res.status(400).json({ errors: errors.array() });
+		}
 
-    //pull fields from body
-    const { name, author, description, instructions, photos, tags } = req.body;
+		//pull fields from body
+		const { name, author, description, instructions, photo, tags } = req.body;
 
-    try {
-      let recipe = new Recipe({
-        name: req.body.name,
-        author: req.body.author,
-        description: req.body.description,
-        instructions: req.body.instructions,
-        ingredients: req.body.ingredients,
-        photos: req.body.photos,
-        tags: req.body.tags
-      });
+		try {
+			let recipe = new Recipe({
+				name: req.body.name,
+				author: req.body.author,
+				description: req.body.description,
+				instructions: req.body.instructions,
+				ingredients: req.body.ingredients,
+				photo: req.body.photo,
+				tags: req.body.tags
+			});
 
-      // Save new recipe to database
-      await recipe.save();
-      res.send(recipe);
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server Error');
-    }
-  }
+			// Save new recipe to database
+			await recipe.save();
+			res.send(recipe);
+		} catch (err) {
+			console.error(err.message);
+			res.status(500).send('Server Error');
+		}
+	}
 );
 
 // @route   GET api/recipe
 // @desc    Test route
 // @access  Public
+
+// dummy route for testing
+//router.get('/', (req, res) => res.send('Recipe route'));
+
 router.get('/', (req, res) => res.send('Recipe route'));
 
 // @route   DELETE api/recipe id
