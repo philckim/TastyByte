@@ -16,7 +16,6 @@ router.post(
 		check('description', 'Description is required').not().isEmpty(),
 		check('instructions', 'Instructions are required').not().isEmpty(),
 		check('ingredients', 'Ingredients are required').not().isEmpty(),
-		check('photo', 'Photo is required').not().isEmpty(),
 		check('tags', 'tags are required').not().isEmpty()
 	],
 	async (req, res) => {

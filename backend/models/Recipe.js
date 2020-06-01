@@ -23,7 +23,7 @@ const RecipeSchema = new mongoose.Schema({
 	},
 	photo: {
 		type: String,
-		required: true
+		default: 'https://image.shutterstock.com/image-photo/healthy-food-clean-eating-selection-260nw-722718082.jpg'
 	},
 	tags: {
 		type: [ String ],
