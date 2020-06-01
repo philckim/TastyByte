@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Jumbotron, Container, Form, Button } from 'react-bootstrap';
+import { Jumbotron, Container, Form, Button, Image, Col, Row } from 'react-bootstrap';
+import Logo from './tastybytelogo.png';
+import './../../src/index.css';
 
 const FormLogin = () => {
 	const [ formData, setFormData ] = useState({
@@ -19,7 +21,20 @@ const FormLogin = () => {
 	return (
 		<Container>
 			<Jumbotron>
-				<h1 className="home-title">Welcome to TastyByte!</h1>
+				<Row
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						marginBottom: '5%',
+						marginLeft: '0%',
+						marginRight: '0%'
+					}}
+				>
+					<Col xs={10} md={5}>
+						<Image className="tbLOgo" src={Logo} alt="Tasty Byte Logo" roundedCircle />
+					</Col>
+				</Row>
 				<h2>Login</h2>
 				<Form onSubmit={(e) => onSubmit(e)}>
 					<Form.Group controlId="formBasicusername">
@@ -54,6 +69,9 @@ const FormLogin = () => {
 					</Button>
 					<p>
 						Forgot <a href="/recoverpassword">password</a> or <a href="/recoverusername">username</a>?
+					</p>
+					<p>
+						Not a member? Join us <a href="/createaccount">now</a>
 					</p>
 				</Form>
 			</Jumbotron>

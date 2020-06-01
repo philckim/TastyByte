@@ -51,3 +51,8 @@
 	background: var(--success-color);
 	color: rgb(3, 3, 3);
 }
+
+.tbLogo {
+	align-items: center;
+	background-color: red;
+}

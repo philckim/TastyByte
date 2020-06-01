@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Jumbotron, Container, Form, Button, Col } from 'react-bootstrap';
 import { setAlert } from '../actions/alert';
+import { register } from '../actions/auth';
 import PropTypes from 'prop-types';
 
-const CreateAccount = ({ setAlert }) => {
+const CreateAccount = ({ setAlert, register }) => {
 	const [ formData, setFormData ] = useState({
 		firstname: '',
 		lastname: '',
@@ -23,7 +24,7 @@ const CreateAccount = ({ setAlert }) => {
 		if (password !== password2) {
 			setAlert('Passwords do not match', 'danger');
 		} else {
-			console.log('Success');
+			register({ firstname, lastname, username, email, password });
 		}
 	};
 
@@ -43,7 +44,6 @@ const CreateAccount = ({ setAlert }) => {
 								name="firstname"
 								value={firstname}
 								onChange={(e) => onChange(e)}
-								required
 								placeholder="Enter First name"
 							/>
 						</Form.Group>
@@ -55,7 +55,6 @@ const CreateAccount = ({ setAlert }) => {
 								name="lastname"
 								value={lastname}
 								onChange={(e) => onChange(e)}
-								required
 								placeholder="Enter Last name"
 							/>
 						</Form.Group>
@@ -69,7 +68,6 @@ const CreateAccount = ({ setAlert }) => {
 								name="username"
 								value={username}
 								onChange={(e) => onChange(e)}
-								required
 								placeholder="Enter username"
 							/>
 						</Form.Group>
@@ -81,7 +79,6 @@ const CreateAccount = ({ setAlert }) => {
 								name="email"
 								value={email}
 								onChange={(e) => onChange(e)}
-								required
 								placeholder="Enter email"
 							/>
 						</Form.Group>
@@ -93,10 +90,8 @@ const CreateAccount = ({ setAlert }) => {
 							<Form.Control
 								type="password"
 								name="password"
-								minLength="6"
 								value={password}
 								onChange={(e) => onChange(e)}
-								required
 								placeholder="Enter password"
 							/>
 						</Form.Group>
@@ -108,7 +103,6 @@ const CreateAccount = ({ setAlert }) => {
 								name="password2"
 								value={password2}
 								onChange={(e) => onChange(e)}
-								required
 								placeholder="Verify Password"
 							/>
 						</Form.Group>
@@ -137,7 +131,8 @@ const CreateAccount = ({ setAlert }) => {
 };
 
 CreateAccount.propTypes = {
-	setAlert: PropTypes.func.isRequired
+	setAlert: PropTypes.func.isRequired,
+	register: PropTypes.func.isRequired
 };
 
-export default connect(null, { setAlert })(CreateAccount);
+export default connect(null, { setAlert, register })(CreateAccount);
