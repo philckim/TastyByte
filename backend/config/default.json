@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb://localhost/tastybytedb",
-  "jwtSecret": "mySecretToken"
+	"mongoURI": "mongodb://localhost/tastybytedb",
+	"jwtSecret": "mySecretToken"
 }
