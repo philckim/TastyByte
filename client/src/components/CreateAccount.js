@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Jumbotron, Container, Form, Button, Col } from 'react-bootstrap';
 import { setAlert } from '../actions/alert';
 import { register } from '../actions/auth';
 import PropTypes from 'prop-types';
 
-const CreateAccount = ({ setAlert, register }) => {
+const CreateAccount = ({ setAlert, register, isAuthenticated }) => {
 	const [ formData, setFormData ] = useState({
 		firstname: '',
 		lastname: '',
-		username: '',
 		email: '',
 		password: '',
 		password2: ''
 	});
 
-	const { firstname, lastname, username, email, password, password2 } = formData;
+	const { firstname, lastname, email, password, password2 } = formData;
 
 	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -24,9 +24,13 @@ const CreateAccount = ({ setAlert, register }) => {
 		if (password !== password2) {
 			setAlert('Passwords do not match', 'danger');
 		} else {
-			register({ firstname, lastname, username, email, password });
+			register({ firstname, lastname, email, password });
 		}
 	};
+
+	if (isAuthenticated) {
+		return <Redirect to="/FormLogin" />;
+	}
 
 	return (
 		<Container>
@@ -61,17 +65,6 @@ const CreateAccount = ({ setAlert, register }) => {
 					</Form.Row>
 
 					<Form.Row>
-						<Form.Group as={Col}>
-							<Form.Label>Username</Form.Label>
-							<Form.Control
-								type="text"
-								name="username"
-								value={username}
-								onChange={(e) => onChange(e)}
-								placeholder="Enter username"
-							/>
-						</Form.Group>
-
 						<Form.Group as={Col}>
 							<Form.Label>Email</Form.Label>
 							<Form.Control
@@ -115,7 +108,7 @@ const CreateAccount = ({ setAlert, register }) => {
 					<br />
 
 					<Form.Group id="formGridCheckbox">
-						<Form.Check type="checkbox" label="I agree to terms and conditions." />
+						<Form.Check type="checkbox" label="I agree to terms and conditions." required />
 					</Form.Group>
 
 					<Button value="CreateAccount" type="submit" onSubmit={(e) => onSubmit(e)}>
@@ -132,7 +125,12 @@ const CreateAccount = ({ setAlert, register }) => {
 
 CreateAccount.propTypes = {
 	setAlert: PropTypes.func.isRequired,
-	register: PropTypes.func.isRequired
+	register: PropTypes.func.isRequired,
+	isAuthenticated: PropTypes.bool
 };
 
-export default connect(null, { setAlert, register })(CreateAccount);
+const mapStateToProps = (state) => ({
+	isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { setAlert, register })(CreateAccount);

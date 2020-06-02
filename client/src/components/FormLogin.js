@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Jumbotron, Container, Form, Button, Image, Col, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../actions/auth';
 import Logo from './tastybytelogo.png';
 import './../../src/index.css';
 
-const FormLogin = () => {
+const FormLogin = ({ login, isAuthenticated }) => {
 	const [ formData, setFormData ] = useState({
-		username: '',
+		email: '',
 		password: ''
 	});
 
-	const { username, password } = formData;
+	const { email, password } = formData;
 
 	const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		console.log('Success');
+		login(email, password);
 	};
+
+	//redirect if logged in
+	if (isAuthenticated) {
+		return <Redirect to="/feed" />;
+	}
 
 	return (
 		<Container>
@@ -38,14 +47,14 @@ const FormLogin = () => {
 				<h2>Login</h2>
 				<Form onSubmit={(e) => onSubmit(e)}>
 					<Form.Group controlId="formBasicusername">
-						<Form.Label>User name</Form.Label>
+						<Form.Label>User Email</Form.Label>
 						<Form.Control
-							type="user"
-							name="username"
-							value={username}
+							type="email"
+							name="email"
+							value={email}
 							onChange={(e) => onChange(e)}
 							required
-							placeholder="Enter Username"
+							placeholder="Enter Email"
 						/>
 					</Form.Group>
 
@@ -79,4 +88,13 @@ const FormLogin = () => {
 	);
 };
 
-export default FormLogin;
+FormLogin.propTypes = {
+	login: PropTypes.func.isRequired,
+	isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = (state) => ({
+	isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps, { login })(FormLogin);

@@ -17,7 +17,6 @@ router.post(
 		//checking account fields
 		check('firstname', 'First Name is required').not().isEmpty(),
 		check('lastname', 'Last Name is required').not().isEmpty(),
-		check('username', 'Username is required').not().isEmpty(),
 		check('email', 'Please include a valid email').isEmail(),
 		check('password', 'Please enter a password with 6 or more characters').isLength({ min: 6 })
 	],
@@ -28,7 +27,7 @@ router.post(
 		}
 
 		//pull fields from body
-		const { firstname, lastname, username, email, password } = req.body;
+		const { firstname, lastname, email, password } = req.body;
 
 		try {
 			let account = await Account.findOne({ email });
@@ -42,7 +41,6 @@ router.post(
 			account = new Account({
 				firstname,
 				lastname,
-				username,
 				email,
 				password
 			});

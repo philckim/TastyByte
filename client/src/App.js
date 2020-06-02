@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -17,25 +17,36 @@ import Alert from './components/Alert';
 //redux
 import { Provider } from 'react-redux';
 import store from './store';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthToken';
 
-const App = () => (
-	<Provider store={store}>
-		<Router>
-			<div>
-				<CustomNavigation />
-				<Route exact path="/" component={Home} />
-				<Route path="/createrecipe" component={CreateRecipe} />
-				<Route exact path="/accountsettings" component={AccountSettings} />
-				<Alert />
-				<Route path="/formlogin" component={FormLogin} />
-				<Route path="/createaccount" component={CreateAccount} />
-				<Route path="/recoverpassword" component={RecoverPassword} />
-				<Route path="/recoverusername" component={RecoverUsername} />
-				<Route path="/managerecipes" component={ManageRecipes} />
-				<Route path="/feed" component={Feed} />
-			</div>
-		</Router>
-	</Provider>
-);
+if (localStorage.token) {
+	setAuthToken(localStorage.token);
+}
+
+const App = () => {
+	useEffect(() => {
+		store.dispatch(loadUser());
+	}, []);
+	return (
+		<Provider store={store}>
+			<Router>
+				<div>
+					<CustomNavigation />
+					<Route exact path="/" component={Home} />
+					<Route path="/createrecipe" component={CreateRecipe} />
+					<Route exact path="/accountsettings" component={AccountSettings} />
+					<Alert />
+					<Route path="/formlogin" component={FormLogin} />
+					<Route path="/createaccount" component={CreateAccount} />
+					<Route path="/recoverpassword" component={RecoverPassword} />
+					<Route path="/recoverusername" component={RecoverUsername} />
+					<Route path="/managerecipes" component={ManageRecipes} />
+					<Route path="/feed" component={Feed} />
+				</div>
+			</Router>
+		</Provider>
+	);
+};
 
 export default App;
