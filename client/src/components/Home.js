@@ -8,7 +8,6 @@ class Home extends Component {
 			<Container>
 				<Jumbotron Classname="jumbotron1">
 					<p>Currently Under Construction!</p>
-					{/*<h1 className="home-title">Welcome to TastyByte!</h1>*/}
 					<Row
 						style={{
 							display: 'flex',
@@ -20,7 +19,7 @@ class Home extends Component {
 						}}
 					>
 						<Col xs={10} md={5}>
-							<Image src={Logo} alt="Tasty Byte Logo" roundedCircle />
+							<Image className="tbLOgo" src={Logo} alt="Tasty Byte Logo" roundedCircle />
 						</Col>
 					</Row>
 					<div className="create-act-btn">
