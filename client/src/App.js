@@ -19,6 +19,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
@@ -34,15 +35,15 @@ const App = () => {
 				<div>
 					<CustomNavigation />
 					<Route exact path="/" component={Home} />
-					<Route path="/createrecipe" component={CreateRecipe} />
-					<Route exact path="/accountsettings" component={AccountSettings} />
+					<PrivateRoute path="/createrecipe" component={CreateRecipe} />
+					<PrivateRoute exact path="/accountsettings" component={AccountSettings} />
 					<Alert />
 					<Route path="/formlogin" component={FormLogin} />
 					<Route path="/createaccount" component={CreateAccount} />
 					<Route path="/recoverpassword" component={RecoverPassword} />
 					<Route path="/recoverusername" component={RecoverUsername} />
-					<Route path="/managerecipes" component={ManageRecipes} />
-					<Route path="/feed" component={Feed} />
+					<PrivateRoute path="/managerecipes" component={ManageRecipes} />
+					<PrivateRoute path="/feed" component={Feed} />
 				</div>
 			</Router>
 		</Provider>

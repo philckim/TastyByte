@@ -12,7 +12,7 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 				<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
 				<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
 				<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
-				<Nav.Link onClick={logout} href="/FormLogin">
+				<Nav.Link onClick={logout} href="/">
 					<i classname="fas fa-sign-out-alt" />
 					<span className="hide-sm">Logout</span>
 				</Nav.Link>
@@ -35,7 +35,7 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
 				<Nav className="mr-auto">
-					<Nav.Link href="/">Home</Nav.Link>
+					<Nav.Link href="/feed">Home</Nav.Link>
 				</Nav>
 				{!loading && <Fragment> {isAuthenticated ? authLinks : guestLinks}</Fragment>}
 			</Navbar.Collapse>
