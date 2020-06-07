@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from './../actions/auth';
+import './../index.css';
 
 const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const authLinks = (
 		<ul>
 			<Nav>
+				<Nav.Link href="/feed">Home</Nav.Link>
 				<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
 				<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
 				<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
@@ -31,12 +33,12 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 
 	return (
 		<Navbar bg="light" expand="lg">
-			<Navbar.Brand href="/">Tasty Byte</Navbar.Brand>
+			<Navbar.Brand href="/" className="tasty">
+				Tasty Byte
+			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="mr-auto">
-					<Nav.Link href="/feed">Home</Nav.Link>
-				</Nav>
+				<Nav className="mr-auto" />
 				{!loading && <Fragment> {isAuthenticated ? authLinks : guestLinks}</Fragment>}
 			</Navbar.Collapse>
 		</Navbar>
