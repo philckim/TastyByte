@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from './../actions/auth';
+
 import './../index.css';
 
 const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const authLinks = (
 		<ul>
 			<Nav>
+				<Nav.Link href="/feed">Home</Nav.Link>
 				<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
 				<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
 				<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
