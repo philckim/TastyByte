@@ -10,12 +10,11 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const authLinks = (
 		<ul>
 			<Nav>
-				<Nav.Link href="/feed">Home</Nav.Link>
 				<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
 				<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
 				<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
-				<Nav.Link onClick={logout} href="/">
-					<i classname="fas fa-sign-out-alt" />
+				<Nav.Link onClick={logout} href="/FormLogin">
+					<i className="fas fa-sign-out-alt" />
 					<span className="hide-sm">Logout</span>
 				</Nav.Link>
 			</Nav>
