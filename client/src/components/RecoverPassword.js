@@ -5,7 +5,7 @@ class RecoverPassword extends Component {
   render() {
     return (
       <Container>
-        <Jumbotron Classname="jumbotron1">
+        <Jumbotron className="jumbotron1">
           <p>Currently Under Construction!</p>
           <h2>Forgot Password?</h2>
           <p>You can reset your password here.</p>

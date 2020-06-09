@@ -8,7 +8,7 @@ const RecipeSchema = new mongoose.Schema({
     author: {
         type: String,
         required: true,
-        default: 'username'
+        default: 'id'
     },
     description: {
         type: String,
