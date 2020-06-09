@@ -5,7 +5,7 @@ class RecoverUsername extends Component {
   render() {
     return (
       <Container>
-        <Jumbotron Classname="jumbotron1">
+        <Jumbotron className="jumbotron1">
           <h2>Forgot Username?</h2>
           <p>We'll help you remember.</p>
           <Form.Group controlId="formBasicEmail" className="emailinputrecovery">
