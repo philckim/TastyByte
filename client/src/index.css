@@ -98,3 +98,7 @@ img {
 	background: var(--success-color);
 	color: rgb(3, 3, 3);
 }
+
+.tasty {
+	font-weight: bold;
+}
