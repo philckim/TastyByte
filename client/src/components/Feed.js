@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
-import RecipeCard from './ViewRecipe';
+import RecipeCard from './RecipeCard';
 
 import './feed.css';
 
