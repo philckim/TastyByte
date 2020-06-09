@@ -49,7 +49,7 @@ router.post(
 );
 
 // @route   GET api/recipe
-// @desc    Test route
+// @desc    Returns all documents in recipes collection of database
 // @access  Public
 router.get('/', async (req, res) => {
 	let recipes;
@@ -60,8 +60,6 @@ router.get('/', async (req, res) => {
 		return next(error);
 	}
 	res.json({ recipes });
-
-	//	res.send('Recipe route')
 });
 
 // @route   DELETE api/recipe id

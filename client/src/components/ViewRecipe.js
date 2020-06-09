@@ -10,6 +10,8 @@ const RecipeCard = (props) => {
 			<div className="recipe-details">
 				<p className="category">Name:</p>
 				<p>{props.name}</p>
+				<p className="category">Created By: </p>
+				<p>{props.author}</p>
 				<p className="category">Description:</p>
 				<p>{props.description}</p>
 				<p className="category">Instructions:</p>
