@@ -1,82 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
-import RecipeCard from './ViewRecipe';
+import RecipeCard from './RecipeCard';
 
 import './feed.css';
 
 const Feed = () => {
-	const [ recipes, setRecipes ] = useState([
-		{
-			picture: 'https://i.imgur.com/uGXcfnT.jpg',
-			name: 'Miso Soba',
-			description: 'Lorem ipsum dolor sit amet',
-			ingredients: 'Lorem ipsum dolor sit amet',
-			instructions: 'Lorem ipsum dolor sit amet',
-			tags: 'Lorem ipsum dolor sit amet'
-		},
-		{
-			picture: 'https://i.imgur.com/gajIzSd.jpg',
-			name: 'Steak',
-			description: 'Lorem ipsum dolor sit amet',
-			ingredients: 'Lorem ipsum dolor sit amet',
-			instructions: 'Lorem ipsum dolor sit amet',
-			tags: 'Lorem ipsum dolor sit amet'
-		},
-		{
-			picture: 'https://i.imgur.com/7CA6APF.jpg',
-			name: 'Herb Chicken',
-			description: 'Lorem ipsum dolor sit amet',
-			ingredients: 'Lorem ipsum dolor sit amet',
-			instructions: 'Lorem ipsum dolor sit amet',
-			tags: 'Lorem ipsum dolor sit amet'
-		}
-	]);
+	const [ recipes, setRecipes ] = useState([]);
 
-	// for testing with dummy data from randomizer API, may use again later
-	// useEffect(() => {
-	//   fetch("https://randomuser.me/api/?results=4")
-	//     .then(response => response.json())
-	//     .then(data => {
-	//       setRecipes(data.results);
-	//     });
-	// }, []);
-
-	const addNewRecipeHandler = (newRecipe) => {
-		setRecipes(recipes.concat(newRecipe));
-	};
+	useEffect(() => {
+		fetch('http://localhost:8080/api/recipe/').then((response) => response.json()).then((data) => {
+			setRecipes(data.recipes);
+		});
+	}, []);
 
 	return (
 		<Container>
 			<Jumbotron>
 				{recipes.map((recipe) => (
 					<RecipeCard
-						picture={recipe.picture}
+						photo={recipe.photo}
+						author={recipe.author}
 						name={recipe.name}
 						description={recipe.description}
-						ingredients={recipe.ingredients}
 						instructions={recipe.instructions}
-						tags={recipe.tags}
 					/>
 				))}
 			</Jumbotron>
-
 			{console.log(recipes)}
-
-			<div className="button">
-				<button
-					onClick={() =>
-						addNewRecipeHandler({
-							picture: 'https://i.imgur.com/EThjIeG.png',
-							name: 'Lorem Ipsum',
-							description: 'Lorem ipsum dolor sit amet',
-							ingredients: 'Lorem ipsum dolor sit amet',
-							instructions: 'Lorem ipsum dolor sit amet',
-							tags: 'Lorem ipsum dolor sit amet'
-						})}
-				>
-					Add Recipe
-				</button>
-			</div>
 		</Container>
 	);
 };
