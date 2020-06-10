@@ -1,4 +1,4 @@
-import uuidv4 from 'uuid/v4';
+import uuidv4 from 'uuid/dist/v4';
 import { SET_ALERT, REMOVE_ALERT } from './types';
 
 export const setAlert = (msg, alertType, timeout = 5000) => (dispatch) => {
