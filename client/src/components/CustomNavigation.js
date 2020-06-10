@@ -10,16 +10,18 @@ import './../index.css';
 const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const authLinks = (
 		<ul>
-			<Nav>
-				<Nav.Link href="/feed">Home</Nav.Link>
-				<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
-				<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
-				<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
-				<Nav.Link onClick={logout} href="/FormLogin">
-					<i className="fas fa-sign-out-alt" />
-					<span className="hide-sm">Logout</span>
-				</Nav.Link>
-			</Nav>
+			<div className="topnav">
+				<Nav>
+					<Nav.Link href="/feed">Home</Nav.Link>
+					<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
+					<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
+					<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
+					<Nav.Link onClick={logout} href="/FormLogin">
+						<i className="fas fa-sign-out-alt" />
+						<span className="hide-sm">Logout</span>
+					</Nav.Link>
+				</Nav>
+			</div>
 		</ul>
 	);
 
@@ -33,7 +35,7 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	);
 
 	return (
-		<Navbar bg="light" expand="lg">
+		<Navbar bg="light" expand="lg" className="navb">
 			<Navbar.Brand href="/" className="tasty">
 				Tasty Byte
 			</Navbar.Brand>

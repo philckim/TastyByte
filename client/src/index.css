@@ -102,3 +102,10 @@ img {
 .tasty {
 	font-weight: bold;
 }
+
+/*custom navbar css*/
+
+.topnav :hover {
+	opacity: 1;
+	color: peachpuff;
+}
