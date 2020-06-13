@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from './../actions/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './../index.css';
 
@@ -12,13 +13,24 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 		<ul>
 			<div className="topnav">
 				<Nav>
-					<Nav.Link href="/feed">Home</Nav.Link>
-					<Nav.Link href="/createrecipe">Create Recipe</Nav.Link>
-					<Nav.Link href="/managerecipes">Manage Recipes</Nav.Link>
-					<Nav.Link href="/accountsettings">Account Settings</Nav.Link>
+					<Nav.Link href="/feed">
+						<i>Home</i>
+					</Nav.Link>
+					<Nav.Link href="/createrecipe">
+						<i>Create Recipe</i>
+					</Nav.Link>
+					<Nav.Link href="/managerecipes">
+						<i>Manage Recipes</i>
+					</Nav.Link>
+					<Nav.Link href="/myprofile">
+						<FontAwesomeIcon icon="coffee" /> <i>Profile</i>
+					</Nav.Link>
+					<Nav.Link href="/accountsettings">
+						<i>Account Setting</i>
+					</Nav.Link>
 					<Nav.Link onClick={logout} href="/FormLogin">
-						<i className="fas fa-sign-out-alt" />
-						<span className="hide-sm">Logout</span>
+						<FontAwesomeIcon icon="logout" />
+						<i>Logout</i>
 					</Nav.Link>
 				</Nav>
 			</div>

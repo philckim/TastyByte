@@ -13,6 +13,12 @@ import RecoverUsername from './components/RecoverUsername';
 import ManageRecipes from './components/ManageRecipes';
 import Feed from './components/Feed';
 import Alert from './components/Alert';
+import Myprofile from './components/Myprofile';
+
+//font awesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 //redux
 import { Provider } from 'react-redux';
@@ -44,10 +50,13 @@ const App = () => {
 					<Route path="/recoverusername" component={RecoverUsername} />
 					<PrivateRoute path="/managerecipes" component={ManageRecipes} />
 					<PrivateRoute path="/feed" component={Feed} />
+					<PrivateRoute path="/Myprofile" component={Myprofile} />
 				</div>
 			</Router>
 		</Provider>
 	);
 };
+
+library.add(fab, faCheckSquare, faCoffee);
 
 export default App;

@@ -3,28 +3,32 @@ const mongoose = require('mongoose');
 const RecipeSchema = new mongoose.Schema({
 	name: {
 		type: String,
-		required: true
+		required: true,
+		default: 'Recipe Title'
 	},
 	author: {
 		type: String,
 		required: true,
-		default: 'id'
+		default: 'Anonymous User'
 	},
 	description: {
 		type: String,
-		required: true
+		required: true,
+		default: 'No description entered.'
 	},
 	instructions: {
 		type: String,
-		required: true
+		required: true,
+		default: 'No instructions entered.'
 	},
 	ingredients: {
 		type: [ String ],
-		required: true
+		required: true,
+		default: 'No ingredients entered.'
 	},
 	photo: {
 		type: String,
-		default: 'https://image.shutterstock.com/image-photo/healthy-food-clean-eating-selection-260nw-722718082.jpg'
+		default: 'https://i.imgur.com/5RZtSSA.png'
 	},
 	tags: {
 		type: [ String ],
