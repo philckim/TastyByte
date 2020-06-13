@@ -29,7 +29,7 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 						<i>Account Setting</i>
 					</Nav.Link>
 					<Nav.Link onClick={logout} href="/FormLogin">
-						<FontAwesomeIcon icon="logout" />
+						<FontAwesomeIcon icon="sign-out-alt" />
 						<i>Logout</i>
 					</Nav.Link>
 				</Nav>
@@ -40,8 +40,12 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const guestLinks = (
 		<ul>
 			<Nav>
-				<Nav.Link href="/CreateAccount">Create Account</Nav.Link>
-				<Nav.Link href="/FormLogin">Login</Nav.Link>
+				<Nav.Link href="/CreateAccount">
+					<i>Create Account</i>
+				</Nav.Link>
+				<Nav.Link href="/FormLogin">
+					<i>Login</i>
+				</Nav.Link>
 			</Nav>
 		</ul>
 	);

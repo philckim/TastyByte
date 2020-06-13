@@ -101,6 +101,7 @@ img {
 
 .tasty {
 	font-weight: bold;
+	font-style: italic;
 }
 
 /*custom navbar css*/
@@ -108,4 +109,18 @@ img {
 .topnav :hover {
 	opacity: 1;
 	color: peachpuff;
+}
+
+.profi {
+	margin-top: 20px;
+	text-align: center;
+	color: rgb(228, 136, 55);
+	font-style: italic;
+}
+
+.navb {
+	margin: 20px;
+	border-style: solid;
+	border-radius: 20px;
+	border-color: bisque;
 }
