@@ -1,4 +1,4 @@
-# TastyByte, a Foodie Social Network ![TastyByte Logo](https://i.imgur.com/AgcKaB7.png)
+# ![TastyByte Logo](https://i.imgur.com/0MMJKej.png) TastyByte, a Foodie Social Network
 AD410 Project Group A (Alex Sutherland, Andy Wilson, Paul Briones, Phil Kim)
 
 Welcome to TastyByte :cucumber: :carrot: :broccoli: :onion: :plate_with_cutlery:, a social network for foodies to share their favorite recipes. Built with React, Node, Express, and MongoDB. 
