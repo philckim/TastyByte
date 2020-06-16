@@ -19,14 +19,6 @@ code {
 	display: inline;
 }
 
-.home-title {
-	text-align: center;
-	font-size: 70px;
-	color: red;
-	font-style: italic;
-	margin-bottom: 50px;
-}
-
 .create-act-btn {
 	text-align: center;
 	margin-bottom: 20px;
@@ -43,6 +35,9 @@ p {
 .jumbotron {
 	margin-top: 20px;
 	border-style: solid;
+	border-color: blanchedalmond;
+	background: rgba(0, 0, 0, 0);
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -101,4 +96,57 @@ img {
 
 .tasty {
 	font-weight: bold;
+	font-style: italic;
+}
+
+/*custom navbar css*/
+
+.topnav :hover {
+	opacity: 1;
+	color: peachpuff;
+}
+
+.tbLOgo2 {
+	height: 75px;
+	width: 75px;
+}
+
+/*My profile css*/
+.profi {
+	margin-top: 20px;
+	text-align: center;
+	color: rgb(228, 136, 55);
+	font-style: italic;
+}
+
+.navb {
+	margin: 20px;
+	border-style: solid;
+	border-radius: 20px;
+	border-color: bisque;
+	background: rgba(0, 0, 0, 0);
+}
+
+.profilebtn {
+	margin-top: 20px;
+}
+
+.profilebtn2 {
+	position: center;
+}
+
+/*/home css*/
+.home {
+	position: relative;
+	background-image: url('../src/components/spaceneedle.JPG');
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*Myprofile*/
+
+.myprofile {
+	margin-bottom: 20px;
 }

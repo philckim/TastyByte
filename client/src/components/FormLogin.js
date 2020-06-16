@@ -77,7 +77,7 @@ const FormLogin = ({ login, isAuthenticated }) => {
 						Submit
 					</Button>
 					<p>
-						Forgot <a href="/recoverpassword">password</a> or <a href="/recoverusername">username</a>?
+						Forgot <a href="/recoverpassword">password</a>?
 					</p>
 					<p>
 						Not a member? Join us <a href="/createaccount">now</a>
