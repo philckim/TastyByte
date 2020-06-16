@@ -1,8 +1,7 @@
-![TastyByte Logo](https://i.imgur.com/UTorCny.png)
-# TastyByte, a foodie social network
+# ![TastyByte Logo](https://i.imgur.com/AgcKaB7.png) TastyByte, a Foodie Social Network
 AD410 Project Group A (Alex Sutherland, Andy Wilson, Paul Briones, Phil Kim)
 
-Welcome to TastyByte :plate_with_cutlery:, a social network for foodies to share their favorite recipes. Built with React, Node, Express, and MongoDB. 
+Welcome to TastyByte :cucumber: :carrot: :broccoli: :onion: :plate_with_cutlery:, a social network for foodies to share their favorite recipes. Built with React, Node, Express, and MongoDB. 
 
 ## Deploy Locally
 `backend` folder contains backend Express app. To run this server:
@@ -48,7 +47,7 @@ Returns all recipe objects
 ```shell
 http://localhost:8080/api/recipe/
 ```
-Insert recipe object into database like below; customize values as desired.
+Insert recipe object into database like below; customize values as desired
 ```shell
 {
     "name": "Recipe Name",
