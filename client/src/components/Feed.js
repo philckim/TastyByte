@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container } from 'react-bootstrap';
 import RecipeCard from './RecipeCard';
 
-import './feed.css';
+import '../index.css';
 
 const Feed = () => {
 	const [ recipes, setRecipes ] = useState([]);
