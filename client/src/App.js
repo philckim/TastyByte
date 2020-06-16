@@ -30,7 +30,9 @@ import {
 	faUtensilSpoon,
 	faBreadSlice,
 	faThumbsUp,
-	faThumbsDown
+	faThumbsDown,
+	faSignInAlt,
+	faCookieBite
 } from '@fortawesome/free-solid-svg-icons';
 
 //redux
@@ -82,7 +84,9 @@ library.add(
 	faUtensilSpoon,
 	faBreadSlice,
 	faThumbsUp,
-	faThumbsDown
+	faThumbsDown,
+	faSignInAlt,
+	faCookieBite
 );
 
 export default App;
