@@ -35,7 +35,9 @@ p {
 .jumbotron {
 	margin-top: 20px;
 	border-style: solid;
+	border-color: blanchedalmond;
 	background: rgba(0, 0, 0, 0);
+	margin-bottom: 20px;
 }
 
 h2 {
@@ -143,18 +145,8 @@ img {
 	background-size: cover;
 }
 
-.jumbotron1 {
-	background: rgba(0, 0, 0, 0);
-	border-radius: 100px;
-}
-
 /*Myprofile*/
 
 .myprofile {
-	background-color: aliceblue;
-}
-
-.jumbotron {
-	background: rgba(0, 0, 0, 0);
-	border-radius: 100px;
+	margin-bottom: 20px;
 }

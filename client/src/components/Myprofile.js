@@ -17,14 +17,14 @@ const Myprofile = ({ getCurrentProfile, auth: { account }, profile: { profile, l
 	return loading && profile === null ? (
 		<Spinner />
 	) : (
-		<Container>
+		<Container className="myprofile">
 			<Jumbotron>
 				<h2 className="medium profi">My Profile</h2>
 				<p className="lead">
 					<i>
 						<FontAwesomeIcon icon="coffee" />
 					</i>{' '}
-					Welcome to your profile {account && account.firstname}.
+					Welcome to your profile {account && <p>{account.firstname}</p>}.
 				</p>
 				{profile !== null ? <Fragment>has</Fragment> : <Fragment>has not</Fragment>}
 

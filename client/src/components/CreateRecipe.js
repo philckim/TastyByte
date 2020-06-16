@@ -32,7 +32,6 @@ const CreateRecipe = ({ user = {} }) => {
 		<Container>
 			<Jumbotron>
 				<h2>Create Your Recipes Here!</h2>
-				<p>Currently under construction.</p>
 
 				{error && <p>{error}</p>}
 

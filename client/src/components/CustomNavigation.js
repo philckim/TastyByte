@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from './../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+
 import Logo from './tastybytelogo.png';
 
 import './../index.css';
+
+const FontAwesome = require('react-fontawesome');
 
 const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const authLinks = (
@@ -16,24 +18,22 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 			<div className="topnav">
 				<Nav>
 					<Nav.Link href="/feed">
-						<FontAwesomeIcon icon="fahome" />
-						<i>Home</i>
+						<FontAwesomeIcon icon="home" /> <i>Home</i>
 					</Nav.Link>
 					<Nav.Link href="/createrecipe">
-						<i>Create Recipe</i>
+						<FontAwesomeIcon icon="utensil-spoon" /> <i>Create Recipe</i>
 					</Nav.Link>
 					<Nav.Link href="/managerecipes">
-						<i>Manage Recipes</i>
+						<FontAwesomeIcon icon="bread-slice" /> <i>Manage Recipes</i>
 					</Nav.Link>
 					<Nav.Link href="/myprofile">
 						<FontAwesomeIcon icon="coffee" /> <i>Profile</i>
 					</Nav.Link>
 					<Nav.Link href="/accountsettings">
-						<i>Account Setting</i>
+						<FontAwesomeIcon icon="wrench" /> <i>Account Setting</i>
 					</Nav.Link>
 					<Nav.Link onClick={logout} href="/FormLogin">
-						<FontAwesomeIcon icon="fa-sign-out-alt" />
-						<i>Logout</i>
+						<FontAwesomeIcon icon="sign-out-alt" /> <i>Logout</i>
 					</Nav.Link>
 				</Nav>
 			</div>
