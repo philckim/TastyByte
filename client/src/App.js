@@ -14,6 +14,7 @@ import ManageRecipes from './components/ManageRecipes';
 import Feed from './components/Feed';
 import Alert from './components/Alert';
 import Myprofile from './components/Myprofile';
+import Posts from './components/posts/posts';
 
 import '../src/index.css';
 
@@ -27,7 +28,9 @@ import {
 	faSignOutAlt,
 	faWrench,
 	faUtensilSpoon,
-	faBreadSlice
+	faBreadSlice,
+	faThumbsUp,
+	faThumbsDown
 } from '@fortawesome/free-solid-svg-icons';
 
 //redux
@@ -58,10 +61,10 @@ const App = () => {
 						<Route path="/formlogin" component={FormLogin} />
 						<Route path="/createaccount" component={CreateAccount} />
 						<Route path="/recoverpassword" component={RecoverPassword} />
-						<Route path="/recoverusername" component={RecoverUsername} />
 						<PrivateRoute path="/managerecipes" component={ManageRecipes} />
 						<PrivateRoute path="/feed" component={Feed} />
 						<PrivateRoute path="/Myprofile" component={Myprofile} />
+						<PrivateRoute path="/posts" component={Posts} />
 					</div>
 				</Router>
 			</Provider>
@@ -69,6 +72,17 @@ const App = () => {
 	);
 };
 
-library.add(fab, faCheckSquare, faCoffee, faHome, faSignOutAlt, faWrench, faUtensilSpoon, faBreadSlice);
+library.add(
+	fab,
+	faCheckSquare,
+	faCoffee,
+	faHome,
+	faSignOutAlt,
+	faWrench,
+	faUtensilSpoon,
+	faBreadSlice,
+	faThumbsUp,
+	faThumbsDown
+);
 
 export default App;
