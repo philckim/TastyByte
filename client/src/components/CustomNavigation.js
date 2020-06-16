@@ -70,12 +70,12 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 };
 
 CustomNavigation.propTypes = {
-	logout: PropTypes.func.isRequired,
-	auth: PropTypes.object.isRequired
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-	auth: state.auth
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logout })(CustomNavigation);

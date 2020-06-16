@@ -4,8 +4,7 @@ import RecipeCard from './RecipeCard';
 import { addLike, removeLike } from '../actions/post';
 import { connect } from 'react-redux';
 
-import './feed.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../index.css';
 
 const Feed = () => {
 	const [ recipes, setRecipes ] = useState([]);
