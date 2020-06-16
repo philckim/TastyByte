@@ -5,8 +5,7 @@ const ProfileSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'account'
 	},
-
-	bio: {
+	status: {
 		type: String
 	},
 

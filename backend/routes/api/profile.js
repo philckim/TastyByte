@@ -10,7 +10,7 @@ const Account = require('../../models/Account');
 //test get current users profile
 //@acess public
 
-router.get('/me', auth, async (req, res) => {
+router.get('/myself', auth, async (req, res) => {
 	try {
 		const profile = await Profile.findOne({ account: req.account.id }).populate('account', [ 'firstname' ]);
 		if (!profile) {
@@ -38,7 +38,7 @@ router.post('/', [ auth, check('status', 'Status is required').not().isEmpty() ]
 	//build profile object
 	const profileFields = {};
 	profileFields.account = req.account.id;
-	if (bio) profileFields.bio = bio;
+	if (status) profileFields.status = status;
 
 	try {
 		let profile = await Profile.findOne({ account: req.account.id });

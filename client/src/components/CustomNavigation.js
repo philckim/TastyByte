@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Col, Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from './../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+import Logo from './tastybytelogo.png';
 
 import './../index.css';
 
@@ -14,6 +16,7 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 			<div className="topnav">
 				<Nav>
 					<Nav.Link href="/feed">
+						<FontAwesomeIcon icon="fahome" />
 						<i>Home</i>
 					</Nav.Link>
 					<Nav.Link href="/createrecipe">
@@ -29,7 +32,7 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 						<i>Account Setting</i>
 					</Nav.Link>
 					<Nav.Link onClick={logout} href="/FormLogin">
-						<FontAwesomeIcon icon="sign-out-alt" />
+						<FontAwesomeIcon icon="fa-sign-out-alt" />
 						<i>Logout</i>
 					</Nav.Link>
 				</Nav>
@@ -53,7 +56,9 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	return (
 		<Navbar bg="light" expand="lg" className="navb">
 			<Navbar.Brand href="/" className="tasty">
-				Tasty Byte
+				<Col xs={5} md={2.5}>
+					<Image className="tbLOgo2" src={Logo} alt="Tasty Byte Logo" roundedCircle />
+				</Col>
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">

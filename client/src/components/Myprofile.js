@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile } from '../actions/profile';
 import Spinner from './Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Form, Button, Container, Jumbotron } from 'react-bootstrap';
 import '../../src/index.css';
 
 const Myprofile = ({ getCurrentProfile, auth: { account }, profile: { profile, loading } }) => {
@@ -16,12 +17,34 @@ const Myprofile = ({ getCurrentProfile, auth: { account }, profile: { profile, l
 	return loading && profile === null ? (
 		<Spinner />
 	) : (
-		<Fragment>
-			<h1 className="medium profi">Profile</h1>
-			<p className="lead">
-				<i className="fa fa-user" /> Welcome {account && account.firstname}
-			</p>
-		</Fragment>
+		<Container>
+			<Jumbotron>
+				<h2 className="medium profi">My Profile</h2>
+				<p className="lead">
+					<i>
+						<FontAwesomeIcon icon="coffee" />
+					</i>{' '}
+					Welcome to your profile {account && account.firstname}.
+				</p>
+				{profile !== null ? <Fragment>has</Fragment> : <Fragment>has not</Fragment>}
+
+				<Form.Group>
+					<Form.Label htmlFor="description">Tell us something about yourself.</Form.Label>
+					<Form.Control
+						name="status"
+						as="textarea"
+						placeholder="Tell us why you want to share your recipe..."
+						rows="3"
+					/>
+					<Button variant="dark" type="submit" className="profilebtn">
+						Submit
+					</Button>
+				</Form.Group>
+				<Button variant="dark" className="profilebtn2" href="/createrecipe">
+					Ready to share your recipe? Click ME!
+				</Button>
+			</Jumbotron>
+		</Container>
 	);
 };
 
