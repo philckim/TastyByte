@@ -18,6 +18,8 @@ app.use('/api/account', require('./routes/api/account'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/home', require('./routes/api/home'));
 app.use('/api/recipe', require('./routes/api/recipe'));
+app.use('/api/posts', require('./routes/api/posts'));
+app.use('/api/profile', require('./routes/api/profile'));
 
 const PORT = process.env.PORT || 8080;
 

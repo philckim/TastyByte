@@ -1,7 +1,7 @@
 // Visual display of individual recipe posts
 
 import React from 'react';
-import './feed.css';
+import '../index.css';
 
 const RecipeCard = (props) => {
 	return (

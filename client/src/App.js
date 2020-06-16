@@ -13,6 +13,22 @@ import RecoverUsername from './components/RecoverUsername';
 import ManageRecipes from './components/ManageRecipes';
 import Feed from './components/Feed';
 import Alert from './components/Alert';
+import Myprofile from './components/Myprofile';
+
+import '../src/index.css';
+
+//font awesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+	faCheckSquare,
+	faCoffee,
+	faHome,
+	faSignOutAlt,
+	faWrench,
+	faUtensilSpoon,
+	faBreadSlice
+} from '@fortawesome/free-solid-svg-icons';
 
 //redux
 import { Provider } from 'react-redux';
@@ -30,24 +46,29 @@ const App = () => {
 		store.dispatch(loadUser());
 	}, []);
 	return (
-		<Provider store={store}>
-			<Router>
-				<div>
-					<CustomNavigation />
-					<Route exact path="/" component={Home} />
-					<PrivateRoute path="/createrecipe" component={CreateRecipe} />
-					<PrivateRoute exact path="/accountsettings" component={AccountSettings} />
-					<Alert />
-					<Route path="/formlogin" component={FormLogin} />
-					<Route path="/createaccount" component={CreateAccount} />
-					<Route path="/recoverpassword" component={RecoverPassword} />
-					<Route path="/recoverusername" component={RecoverUsername} />
-					<PrivateRoute path="/managerecipes" component={ManageRecipes} />
-					<PrivateRoute path="/feed" component={Feed} />
-				</div>
-			</Router>
-		</Provider>
+		<div className="home">
+			<Provider store={store}>
+				<Router>
+					<div>
+						<CustomNavigation className="home3" />
+						<Route exact path="/" component={Home} />
+						<PrivateRoute path="/createrecipe" component={CreateRecipe} />
+						<PrivateRoute exact path="/accountsettings" component={AccountSettings} />
+						<Alert />
+						<Route path="/formlogin" component={FormLogin} />
+						<Route path="/createaccount" component={CreateAccount} />
+						<Route path="/recoverpassword" component={RecoverPassword} />
+						<Route path="/recoverusername" component={RecoverUsername} />
+						<PrivateRoute path="/managerecipes" component={ManageRecipes} />
+						<PrivateRoute path="/feed" component={Feed} />
+						<PrivateRoute path="/Myprofile" component={Myprofile} />
+					</div>
+				</Router>
+			</Provider>
+		</div>
 	);
 };
+
+library.add(fab, faCheckSquare, faCoffee, faHome, faSignOutAlt, faWrench, faUtensilSpoon, faBreadSlice);
 
 export default App;
