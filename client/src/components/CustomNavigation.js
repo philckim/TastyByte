@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { logout } from './../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Logo from './tastybytelogo.png';
+import Logo from './logonobackground.png';
 
 import './../index.css';
 
