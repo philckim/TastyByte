@@ -13,7 +13,7 @@ Welcome to TastyByte :cucumber::carrot::broccoli::onion::plate_with_cutlery:, a 
     ```
 4. run the following command:
     ```shell
-    node server.js
+    npm run server
     ```
 
 `client` folder contains frontend React app. To run this server:
