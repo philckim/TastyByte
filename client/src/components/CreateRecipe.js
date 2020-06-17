@@ -13,7 +13,7 @@ const CreateRecipe = ({ user = {} }) => {
 
         const data = {
             ...serialize(event.target, { hash: true }),
-            author: get(user, 'email')
+            author: get(user, 'firstname')
         };
         console.log(data);
         try {
