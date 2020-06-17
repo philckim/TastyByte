@@ -41,13 +41,13 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 	);
 
 	const guestLinks = (
-		<ul>
+		<ul className="guestlinksnav">
 			<Nav>
 				<Nav.Link href="/CreateAccount">
-					<i>Create Account</i>
+					<FontAwesomeIcon icon="cookie-bite" /> <i>Create Account</i>
 				</Nav.Link>
 				<Nav.Link href="/FormLogin">
-					<i>Login</i>
+					<FontAwesomeIcon icon="sign-in-alt" /> <i>Login</i>
 				</Nav.Link>
 			</Nav>
 		</ul>
@@ -70,12 +70,12 @@ const CustomNavigation = ({ auth: { isAuthenticated, loading }, logout }) => {
 };
 
 CustomNavigation.propTypes = {
-  logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
+	logout: PropTypes.func.isRequired,
+	auth: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (state) => ({
-  auth: state.auth,
+	auth: state.auth
 });
 
 export default connect(mapStateToProps, { logout })(CustomNavigation);

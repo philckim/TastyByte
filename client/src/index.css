@@ -116,6 +116,15 @@ img {
     color: #04c2f4;
 }
 
+.guestlinksnav {
+	font-family: 'Arvo', serif;
+}
+
+.guestlinksnav :hover {
+	opacity: 1;
+	color: #04c2f4;
+}
+
 .tbLOgo2 {
     height: 75px;
     width: 75px;

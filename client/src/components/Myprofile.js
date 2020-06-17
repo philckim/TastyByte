@@ -24,7 +24,7 @@ const Myprofile = ({ getCurrentProfile, auth: { account }, profile: { profile, l
 					<i>
 						<FontAwesomeIcon icon="coffee" />
 					</i>{' '}
-					Welcome to your profile {account && <p>{account.firstname}</p>}.
+					Welcome to your profile {account && account.firstname}.
 				</p>
 				{profile !== null ? <Fragment>has</Fragment> : <Fragment>has not</Fragment>}
 

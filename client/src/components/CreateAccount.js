@@ -29,7 +29,7 @@ const CreateAccount = ({ setAlert, register, isAuthenticated }) => {
 	};
 
 	if (isAuthenticated) {
-		return <Redirect to="/FormLogin" />;
+		return <Redirect to="/formlogin" />;
 	}
 
 	return (

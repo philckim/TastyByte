@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Jumbotron, Container } from 'react-bootstrap';
+import { Jumbotron, Container, Button } from 'react-bootstrap';
 import RecipeCard from './RecipeCard';
+import { addLike, removeLike } from '../actions/post';
+import { connect } from 'react-redux';
 
 import '../index.css';
 
@@ -31,4 +33,8 @@ const Feed = () => {
 	);
 };
 
-export default Feed;
+const mapStateToProps = (state) => ({
+	auth: state.auth
+});
+
+export default connect(mapStateToProps, { addLike, removeLike })(Feed);
