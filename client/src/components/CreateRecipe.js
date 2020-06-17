@@ -13,7 +13,7 @@ const CreateRecipe = ({ user = {} }) => {
 
         const data = {
             ...serialize(event.target, { hash: true }),
-            author: get(user, '_id')
+            author: get(user, 'email')
         };
         console.log(data);
         try {
@@ -37,7 +37,11 @@ const CreateRecipe = ({ user = {} }) => {
             <Jumbotron>
                 <h2>Create Your Recipes Here!</h2>
 
-                {error && <p style={{ whiteSpace: 'pre-line' }}>{error}</p>}
+                {error && (
+                    <p style={{ whiteSpace: 'pre-line', color: 'red' }}>
+                        {error}
+                    </p>
+                )}
 
                 <Form onSubmit={onSubmit}>
                     <Form.Group>
@@ -167,6 +171,17 @@ const CreateRecipe = ({ user = {} }) => {
                             />
                         </div>
                     ))}
+
+                    <Form.Group>
+                        <Form.Label htmlFor="photo">Photo URL</Form.Label>
+                        <Form.Control
+                            name="photo"
+                            placeholder="Enter the photo URL for your Tasty Byte"
+                        />
+                    </Form.Group>
+
+                    {/* PHOTO UPLOAD 
+
                     <div className="mb-3">
                         <Form.File id="photo">
                             <Form.File.Label htmlFor="photo">
@@ -174,7 +189,8 @@ const CreateRecipe = ({ user = {} }) => {
                             </Form.File.Label>
                             <Form.File.Input name="photo" />
                         </Form.File>
-                    </div>
+                    </div> */}
+
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>

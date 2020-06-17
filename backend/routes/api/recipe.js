@@ -8,73 +8,81 @@ const Recipe = require('../../models/Recipe');
 // @desc    Creates new recipe
 // @access  Public
 router.post(
-  '/',
-  [
-    //checking recipe fields
-    check('name', 'Name is required').not().isEmpty(),
-    check('author', 'Author is required').not().isEmpty(),
-    check('description', 'Description is required').not().isEmpty(),
-    check('instructions', 'Instructions are required').not().isEmpty(),
-    check('ingredients', 'Ingredients are required').not().isEmpty(),
-    check('tags', 'tags are required').not().isEmpty(),
-  ],
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ error: errors.array() });
+    '/',
+    [
+        //checking recipe fields
+        check('name', 'Name is required').not().isEmpty(),
+        check('author', 'Author is required').not().isEmpty(),
+        check('description', 'Description is required').not().isEmpty(),
+        check('instructions', 'Instructions are required').not().isEmpty(),
+        check('ingredients', 'Ingredients are required').not().isEmpty(),
+        check('tags', 'Tags are required').not().isEmpty(),
+        check('photo', 'Please ensure your photo is a proper URL').isURL()
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ error: errors.array() });
+        }
+
+        //pull fields from body
+        const {
+            name,
+            author,
+            description,
+            instructions,
+            photo,
+            tags
+        } = req.body;
+
+        try {
+            let recipe = new Recipe({
+                name: req.body.name,
+                author: req.body.author,
+                description: req.body.description,
+                instructions: req.body.instructions,
+                ingredients: req.body.ingredients,
+                photo: req.body.photo,
+                tags: req.body.tags
+            });
+
+            // Save new recipe to database
+            await recipe.save();
+            res.send(recipe);
+        } catch (err) {
+            console.error(err.message);
+            res.status(500).send('Server Error');
+        }
     }
-
-    //pull fields from body
-    const { name, author, description, instructions, photo, tags } = req.body;
-
-    try {
-      let recipe = new Recipe({
-        name: req.body.name,
-        author: req.body.author,
-        description: req.body.description,
-        instructions: req.body.instructions,
-        ingredients: req.body.ingredients,
-        photo: req.body.photo,
-        tags: req.body.tags,
-      });
-
-      // Save new recipe to database
-      await recipe.save();
-      res.send(recipe);
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server Error');
-    }
-  }
 );
 
 // @route   GET api/recipe
 // @desc    Returns all documents in recipes collection of database
 // @access  Public
 router.get('/', async (req, res) => {
-  let recipes;
-  try {
-    recipes = await Recipe.find({});
-  } catch (err) {
-    const error = new HttpError('Fetching recipes failed.', 500);
-    return next(error);
-  }
-  res.json({ recipes });
+    let recipes;
+    try {
+        recipes = await Recipe.find({});
+    } catch (err) {
+        const error = new HttpError('Fetching recipes failed.', 500);
+        return next(error);
+    }
+    res.json({ recipes });
 });
 
 // @route   GET api/recipe/me
 // @desc    Returns all recipes for specific user
 // @access  Private
 router.get('/me/:id', async (req, res) => {
-  console.log(req.params.id);
-  try {
-    Recipe.find({ author: req.params.id }).then((recipes) => {
-      res.json(recipes);
-    });
-  } catch (err) {
-    const error = new HttpError('Fetching recipes failed.', 500);
-    return next(error);
-  }
+    console.log(req.params.id);
+    try {
+        Recipe.find({ author: req.params.id }).then((recipes) => {
+            res.json(recipes);
+        });
+    } catch (err) {
+        const error = new HttpError('Fetching recipes failed.', 500);
+        return next(error);
+    }
 });
 
 // ROUTER.get('/:id', (req, res) => {
@@ -89,14 +97,14 @@ router.get('/me/:id', async (req, res) => {
 // @access  Private
 
 router.delete('api/recipe/:id', async (req, res) => {
-  try {
-    // remove recipe
-    await Recipe.findOneAndRemove({ name: req.body.name });
+    try {
+        // remove recipe
+        await Recipe.findOneAndRemove({ name: req.body.name });
 
-    res.json({ msg: 'Recipe deleted' });
-  } catch (err) {
-    console.log(err);
-  }
+        res.json({ msg: 'Recipe deleted' });
+    } catch (err) {
+        console.log(err);
+    }
 });
 // 	catch(err) {
 
